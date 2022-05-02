@@ -1,4 +1,4 @@
-import { Drop2Icon, LinkOutIcon, SuccessIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { PluginId, useActivatedPlugin } from '@masknet/plugin-infra/dom'
 import {
     useAccount,
@@ -274,12 +274,12 @@ export function TipDialog({ open = false, onClose }: TipDialogProps) {
                         href={account ? Others?.explorerResolver.addressLink(chainId, account) ?? '' : ''}
                         target="_blank"
                         rel="noopener noreferrer">
-                        <LinkOutIcon className={classes.linkIcon} />
+                        <Icon type="linkOut" className={classes.linkIcon} />
                     </Link>
                 </Typography>
             </div>
             <div className={classes.changeWalletButton} role="button" onClick={openWallet}>
-                <Drop2Icon />
+                <Icon type="drop2" />
             </div>
         </div>
     ) : null
@@ -320,7 +320,7 @@ export function TipDialog({ open = false, onClose }: TipDialogProps) {
                     reset()
                     onClose?.()
                 }}
-                icon={isTokenTip ? <SuccessIcon style={{ height: 64, width: 64 }} /> : null}
+                icon={isTokenTip ? <Icon type="success" size={64} /> : null}
                 message={successMessage}
                 confirmText={t.tip_share()}
                 onConfirm={handleConfirm}

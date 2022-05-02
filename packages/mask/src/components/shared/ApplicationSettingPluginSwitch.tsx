@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemAvatar, Avatar, Typography, Box } from '@mui/material'
 import { openWindow } from '@masknet/shared-base-ui'
-import { TutorialIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useActivatedPluginsSNSAdaptor, PluginI18NFieldRender } from '@masknet/plugin-infra/content-script'
 import { SettingSwitch } from '@masknet/shared'
 import { makeStyles, MaskColorVar } from '@masknet/theme'
@@ -90,7 +90,11 @@ export function ApplicationSettingPluginSwitch(props: Props) {
                                     </Typography>
                                     {x.entry.tutorialLink ? (
                                         <Box className={classes.settings}>
-                                            <TutorialIcon onClick={() => openWindow(x.entry.tutorialLink)} />
+                                            <Icon
+                                                aria-hidden="false"
+                                                aria-role="button"
+                                                onClick={() => openWindow(x.entry.tutorialLink)}
+                                            />
                                         </Box>
                                     ) : null}
                                 </div>

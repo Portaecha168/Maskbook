@@ -1,7 +1,7 @@
 import { memo, useContext } from 'react'
 import { makeStyles } from '@masknet/theme'
 import { Box, Typography } from '@mui/material'
-import { SquareBack,Icon,  PopupCloseIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { PageTitleContext } from '../../context'
 import { PopupRoutes } from '@masknet/shared-base'
@@ -71,7 +71,7 @@ export const NormalHeader = memo<NormalHeaderProps>(({ onlyTitle }) => {
     if (showClose) {
         return (
             <Box className={classes.container} style={{ justifyContent: 'center' }}>
-                <PopupCloseIcon className={classes.close} onClick={() => Services.Helper.removePopupWindow()} />
+                <Icon type="popupClose" className={classes.close} onClick={() => Services.Helper.removePopupWindow()} />
                 <Typography className={classes.title}>{title}</Typography>
             </Box>
         )
@@ -81,7 +81,7 @@ export const NormalHeader = memo<NormalHeaderProps>(({ onlyTitle }) => {
         <Box className={classes.container} style={{ justifyContent: showTitle ? 'center' : 'flex-start' }}>
             {showTitle ? (
                 <>
-                    <SquareBack className={classes.back} onClick={() => navigate(-1)} />
+                    <Icon type="squareBack" className={classes.back} onClick={() => navigate(-1)} />
                     <Typography className={classes.title}>{title}</Typography>
                 </>
             ) : (

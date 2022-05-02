@@ -1,4 +1,4 @@
-import { Icon, RetweetIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { FormattedAddress, FormattedBalance, InjectedDialog, TokenIcon } from '@masknet/shared'
 import { isDashboardPage } from '@masknet/shared-base'
 import { useValueRef } from '@masknet/shared-base-ui'
@@ -314,8 +314,11 @@ export function ConfirmDialogUI(props: ConfirmDialogUIProps) {
                                     </span>
                                 </span>
                             )}
-                            <RetweetIcon
+                            <Icon
+                                type="retweet"
                                 style={{ marginLeft: 4, cursor: 'pointer' }}
+                                aria-hidden="false"
+                                aria-role="button"
                                 onClick={() => setPriceReversed((x) => !x)}
                             />
                         </Typography>

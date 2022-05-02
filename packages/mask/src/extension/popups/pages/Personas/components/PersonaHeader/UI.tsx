@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { makeStyles } from '@masknet/theme'
 import { Avatar, Box, Typography } from '@mui/material'
 import { CopyIconButton } from '../../../../components/CopyIconButton'
-import { ArrowDropIcon, Icon, MasksIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { formatPersonaFingerprint, formatPersonaName } from '@masknet/shared-base'
 
 const useStyles = makeStyles()(() => ({
@@ -75,7 +75,7 @@ export const PersonaHeaderUI = memo<PersonaHeaderUIProps>(
                     {avatar ? (
                         <Avatar src={avatar} className={classes.avatar} />
                     ) : (
-                        <MasksIcon className={classes.avatar} />
+                        <Icon type="masks" className={classes.avatar} />
                     )}
                     <div>
                         <Typography className={classes.nickname}>{formatPersonaName(nickname)}</Typography>
@@ -84,7 +84,8 @@ export const PersonaHeaderUI = memo<PersonaHeaderUIProps>(
                             <CopyIconButton text={fingerprint} className={classes.icon} />
                         </Typography>
                     </div>
-                    <ArrowDropIcon
+                    <Icon
+                        type="arrowDrop"
                         className={classes.arrow}
                         style={{ transform: isSelectPersonaPage ? 'rotate(-180deg)' : undefined }}
                     />

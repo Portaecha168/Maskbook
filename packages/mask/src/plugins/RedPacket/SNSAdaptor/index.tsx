@@ -13,7 +13,7 @@ import RedPacketDialog from './RedPacketDialog'
 import { RedPacketInPost } from './RedPacketInPost'
 import { RedPacketNftInPost } from './RedPacketNftInPost'
 import { Trans } from 'react-i18next'
-import { RedPacketIcon, NFTRedPacketIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { CrossIsolationMessages } from '@masknet/shared-base'
 import { ApplicationEntry } from '@masknet/shared'
 import { useFungibleToken } from '@masknet/plugin-infra/web3'
@@ -69,7 +69,7 @@ const sns: Plugin.SNSAdaptor.Definition = {
                 return {
                     text: (
                         <div style={containerStyle}>
-                            <NFTRedPacketIcon style={badgeSvgIconSize} />
+                            <Icon type="nftRedPacket" style={badgeSvgIconSize} />
                             {payload.message ? payload.message : 'An NFT Lucky Drop'}
                         </div>
                     ),
@@ -81,14 +81,14 @@ const sns: Plugin.SNSAdaptor.Definition = {
         dialog: RedPacketDialog,
         label: (
             <>
-                <RedPacketIcon style={badgeSvgIconSize} />
+                <Icon type="redPacket" style={badgeSvgIconSize} />
                 Lucky Drop
             </>
         ),
     },
     ApplicationEntries: [
         (() => {
-            const icon = <RedPacketIcon />
+            const icon = <Icon type="redPacket" />
             const name = <Trans ns={PluginId.RedPacket} i18nKey="name" />
             const recommendFeature = {
                 description: <Trans ns={PluginId.RedPacket} i18nKey="recommend_feature_description" />,
@@ -156,7 +156,7 @@ function ERC20RedpacketBadge(props: ERC20RedpacketBadgeProps) {
     const tokenDetailed = payload.token?.schema === SchemaType.Native ? nativeCurrency : payload.token ?? fetchedToken
     return (
         <div style={containerStyle}>
-            <RedPacketIcon style={badgeSvgIconSize} /> A Lucky Drop with{' '}
+            <Icon type="redPacket" style={badgeSvgIconSize} /> A Lucky Drop with{' '}
             {formatBalance(payload.total, tokenDetailed?.decimals ?? 0)} $
             {tokenDetailed?.symbol ?? tokenDetailed?.name ?? 'Token'} from {payload.sender.name}
         </div>

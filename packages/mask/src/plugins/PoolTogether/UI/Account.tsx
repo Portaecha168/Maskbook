@@ -1,4 +1,4 @@
-import { RefreshIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { DarkColor } from '@masknet/theme/base'
 import { formatBalance } from '@masknet/web3-shared-base'
 import { CircularProgress, Grid, Link, Typography } from '@mui/material'
@@ -73,7 +73,16 @@ export function Account(props: AccountProps) {
     }
 
     if (error) {
-        return <RefreshIcon className={classes.refresh} color="primary" onClick={retry} />
+        return (
+            <Icon
+                type="refresh"
+                className={classes.refresh}
+                color="inherit"
+                aria-hidden="false"
+                aria-role="button"
+                onClick={retry}
+            />
+        )
     }
 
     const noZeroBalances = balances.filter((balance) => Number.parseInt(balance.account.ticketBalance, 10) !== 0)
