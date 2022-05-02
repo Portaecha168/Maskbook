@@ -170,6 +170,7 @@ export type IconType =
     | 'nftAvatar'
     | 'petIcon'
     | 'poolTogether'
+    | 'poolTogetherTrophy'
     | 'savings'
     | 'securityChecker'
     | 'shared'
@@ -593,7 +594,7 @@ export const maskBoxIcon = new URL('./plugins/MaskBox.svg', import.meta.url).hre
 export const nftAvatarIcon = new URL('./plugins/NFTAvatar.svg', import.meta.url).href
 export const petIconIcon = new URL('./plugins/PetIcon.svg', import.meta.url).href
 export const poolTogetherIcon = new URL('./plugins/PoolTogether.png', import.meta.url).href
-export const redPacketIcon = new URL('./plugins/RedPacket.svg', import.meta.url).href
+export const poolTogetherTrophyIcon = new URL('./plugins/PoolTogetherTrophy.svg', import.meta.url).href
 export const savingsIcon = new URL('./plugins/Savings.svg', import.meta.url).href
 export const securityCheckerIcon = new URL('./plugins/SecurityChecker.svg', import.meta.url).href
 export const sharedIcon = new URL('./plugins/shared.svg', import.meta.url).href
@@ -831,6 +832,7 @@ const icons = {
     nftAvatar: nftAvatarIcon,
     petIcon: petIconIcon,
     poolTogether: poolTogetherIcon,
+    poolTogetherTrophy: poolTogetherTrophyIcon,
     savings: savingsIcon,
     securityChecker: securityCheckerIcon,
     shared: sharedIcon,
