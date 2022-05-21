@@ -18,7 +18,7 @@ import Footer from './Footer'
 import StageCard from './StageCard'
 import EncryptionCard from './EncryptionCard'
 import CompletionCard from './CompletionCard'
-import { PluginWalletConnectIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { WalletConnectedBoundary } from '../../../web3/UI/WalletConnectedBoundary'
 import { ChainBoundary } from '../../../web3/UI/ChainBoundary'
 import { useChainId } from '@masknet/plugin-infra/web3'
@@ -276,7 +276,7 @@ export function FindTruman(props: FindTrumanProps) {
                     <WalletConnectedBoundary
                         classes={{ button: classes.button }}
                         renderInTimeline
-                        startIcon={<PluginWalletConnectIcon style={{ fontSize: 18 }} />}
+                        startIcon={<Icon type="connect" style={{ fontSize: 18 }} />}
                     />
                 </ChainBoundary>
             </Box>

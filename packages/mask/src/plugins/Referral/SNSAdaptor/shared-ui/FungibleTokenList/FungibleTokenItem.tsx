@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react'
 import classNames from 'classnames'
-import { ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import { ListItem, ListItemIcon, ListItemText, Theme, Typography, useMediaQuery } from '@mui/material'
 import type { FungibleToken, NetworkPluginID } from '@masknet/web3-shared-base'
-import { LoadingIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import type { MaskSearchableListItemProps } from '@masknet/theme'
 import { makeStyles, MaskLoadingButton } from '@masknet/theme'
 import { LoadingAnimation, TokenIcon, useSharedI18N } from '@masknet/shared'
@@ -94,6 +94,7 @@ export const getFungibleTokenItem =
     >) => {
         const t = useSharedI18N()
         const { classes } = useStyles()
+        const isXs = useMediaQuery<Theme>((theme) => theme.breakpoints.down('xs'))
 
         if (!token) return null
         const { address, name, symbol, decimals, logoURL, chainId } = token
@@ -134,7 +135,7 @@ export const getFungibleTokenItem =
                     size="small"
                     className={classes.importButton}
                     soloLoading
-                    loadingIndicator={<LoadingIcon sx={{ fontSize: 14 }} />}>
+                    loadingIndicator={<Icon type="loading" size={isXs ? 14 : undefined} />}>
                     {t.import()}
                 </MaskLoadingButton>
             )

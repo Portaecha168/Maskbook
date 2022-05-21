@@ -3,7 +3,7 @@ export type IconType =
     | 'discord'
     | 'eth'
     | 'evmChains'
-    | 'fLow'
+    | 'flow'
     | 'mask'
     | 'maskBanner'
     | 'maskBlue'
@@ -192,7 +192,7 @@ export const bloctoIcon = new URL('./brands/Blocto.svg', import.meta.url).href
 export const discordIcon = new URL('./brands/Discord.svg', import.meta.url).href
 export const ethIcon = new URL('./brands/ETH.svg', import.meta.url).href
 export const evmChainsIcon = new URL('./brands/EVMChains.svg', import.meta.url).href
-export const fLowIcon = new URL('./brands/FLow.svg', import.meta.url).href
+export const flowIcon = new URL('./brands/Flow.svg', import.meta.url).href
 export const maskIcon = new URL('./brands/Mask.svg', import.meta.url).href
 export const maskBannerIcon = new URL('./brands/MaskBanner.svg', import.meta.url).href
 export const maskBlueIcon = new URL('./brands/MaskBlue.svg', import.meta.url).href
@@ -650,7 +650,7 @@ const icons = {
     discord: discordIcon,
     eth: ethIcon,
     evmChains: evmChainsIcon,
-    fLow: fLowIcon,
+    flow: flowIcon,
     mask: maskIcon,
     maskBanner: maskBannerIcon,
     maskBlue: maskBlueIcon,

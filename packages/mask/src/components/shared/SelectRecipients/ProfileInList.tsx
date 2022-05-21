@@ -4,7 +4,7 @@ import { makeStyles, ShadowRootTooltip } from '@masknet/theme'
 import Highlighter from 'react-highlight-words'
 import { formatPersonaFingerprint, ProfileInformationFromNextID } from '@masknet/shared-base'
 import { Avatar } from '../../../utils/components/Avatar'
-import { CopyIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { truncate } from 'lodash-unified'
 import { useI18N } from '../../../utils'
 import { useCopyToClipboard } from 'react-use'
@@ -150,7 +150,8 @@ export function ProfileInList(props: ProfileInListProps) {
                             autoEscape
                             textToHighlight={textToHighlight}
                         />
-                        <CopyIcon
+                        <Icon
+                            type="copy"
                             className={classes.actionIcon}
                             onClick={() => {
                                 const rawPublicKey = profile.linkedPersona?.rawPublicKey

@@ -46,7 +46,7 @@ import { SwapGuide, SwapStatus } from './SwapGuide'
 import { isFacebook } from '../../../social-network-adaptor/facebook.com/base'
 import { isTwitter } from '../../../social-network-adaptor/twitter.com/base'
 import { useAccount, useChainId } from '@masknet/plugin-infra/web3'
-import { SharedIcon, PluginWalletConnectIcon } from '@masknet/icons'
+import { Icon } from '@masknet/icons'
 import { WalletConnectedBoundary } from '../../../web3/UI/WalletConnectedBoundary'
 import { ChainBoundary } from '../../../web3/UI/ChainBoundary'
 
@@ -732,7 +732,7 @@ export function ITO(props: ITO_Props) {
                             <>
                                 <Box style={{ padding: 12, flex: 1 }}>
                                     <ActionButton
-                                        startIcon={<SharedIcon style={{ fontSize: 18 }} />}
+                                        startIcon={<Icon type="shared" size={18} />}
                                         onClick={onShareSuccess}
                                         variant="contained"
                                         size="large"
@@ -747,7 +747,7 @@ export function ITO(props: ITO_Props) {
                                         renderInTimeline>
                                         <WalletConnectedBoundary
                                             hideRiskWarningConfirmed
-                                            startIcon={<PluginWalletConnectIcon style={{ fontSize: 18 }} />}
+                                            startIcon={<Icon type="connect" size={18} />}
                                             classes={{ button: classes.actionButton }}>
                                             <ActionButton
                                                 onClick={retryIfQualified}
@@ -787,7 +787,7 @@ export function ITO(props: ITO_Props) {
                                 {shareText ? (
                                     <Box style={{ flex: 1, padding: 12 }}>
                                         <ActionButton
-                                            startIcon={<SharedIcon style={{ width: 18, height: 18 }} />}
+                                            startIcon={<Icon type="shared" size={18} />}
                                             onClick={onShare}
                                             variant="contained"
                                             size="large"
@@ -814,7 +814,7 @@ export function ITO(props: ITO_Props) {
                                 </Box>
                                 <Box style={{ flex: 1, padding: 12 }}>
                                     <ActionButton
-                                        startIcon={<SharedIcon style={{ width: 18, height: 18 }} />}
+                                        startIcon={<Icon type="shared" size={18} />}
                                         onClick={onShareSuccess}
                                         variant="contained"
                                         size="large"

@@ -1,10 +1,10 @@
 import { useAccount, useChainId } from '@masknet/plugin-infra/web3'
+import { Icon } from '@masknet/icons'
 import { WalletMessages } from '@masknet/plugin-wallet'
 import { useRemoteControlledDialog } from '@masknet/shared-base-ui'
 import { NetworkPluginID } from '@masknet/web3-shared-base'
 import { ChainId } from '@masknet/web3-shared-evm'
 import { Box, useTheme } from '@mui/material'
-import { SharedIcon, PluginWalletConnectIcon } from '@masknet/icons'
 import ActionButton from '../../../../extension/options-page/DashboardComponents/ActionButton'
 import { useI18N as useBaseI18n } from '../../../../utils'
 import { useI18N } from '../../locales'
@@ -90,7 +90,7 @@ export function OperationFooter({
                 renderInTimeline>
                 <WalletConnectedBoundary
                     hideRiskWarningConfirmed
-                    startIcon={<PluginWalletConnectIcon style={{ fontSize: 18 }} />}
+                    startIcon={<Icon type="connect" size={18} />}
                     renderInTimeline
                     classes={{
                         connectWallet: classes.connectWallet,
@@ -107,7 +107,7 @@ export function OperationFooter({
                                     padding: 1.125,
                                 }}
                                 fullWidth
-                                startIcon={<SharedIcon style={{ fontSize: 18 }} />}
+                                startIcon={<Icon type="shared" size={18} />}
                                 variant="contained"
                                 onClick={onShare}>
                                 {tr('share')}
