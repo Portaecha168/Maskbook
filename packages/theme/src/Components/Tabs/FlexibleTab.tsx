@@ -31,17 +31,17 @@ export interface ButtonTabProps extends React.PropsWithChildren<Omit<ButtonProps
     onChange?(event: object, value: string, isUp: boolean): void
 }
 
-export const FlexibleTab = memo<ButtonTabProps>((props) => {
-    const activated = !!props.selected
-    const { onChange, onClick, value } = props
+export const FlexibleTab = memo<ButtonTabProps>(({ isVisitable, ...rest }) => {
+    const activated = !!rest.selected
+    const { onChange, onClick, value } = rest
     const ref = useRef<HTMLButtonElement>(null)
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const isVisitable = props.isVisitable(
+        const visitable = isVisitable(
             ref.current?.getBoundingClientRect().top ?? 0,
             ref.current?.getBoundingClientRect().right ?? 0,
         )
-        if (!activated && onChange) onChange(event, String(value), isVisitable)
+        if (!activated && onChange) onChange(event, String(value), visitable)
         if (onClick) onClick(event)
     }
 
@@ -50,7 +50,7 @@ export const FlexibleTab = memo<ButtonTabProps>((props) => {
             activated={activated}
             ref={ref}
             role="tab"
-            {...props}
+            {...rest}
             disableElevation
             variant="contained"
             aria-selected={activated}
