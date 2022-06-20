@@ -1,5 +1,6 @@
 import { COINGECKO_URL_BASE } from './constants'
 import { getTraderAllAPICachedFlag } from '../helpers'
+import { TrendingAPI, TrendingCoinType } from '../types'
 
 // #region get currency
 export async function getAllCurrencies() {
@@ -11,15 +12,27 @@ export async function getAllCurrencies() {
 // #endregion
 
 // #region get coins list
-export interface Coin {
+
+interface CoinGeckoCoin {
     id: string
     name: string
     symbol: string
 }
 
-export async function getAllCoins() {
-    const response = await fetch(`${COINGECKO_URL_BASE}/coins/list`, { cache: 'force-cache' })
-    return response.json() as Promise<Coin[]>
+interface CoinGeckoSearch {
+    coins: CoinGeckoCoin[]
+    nfts: CoinGeckoCoin[]
+}
+
+export async function getAllCoins(): Promise<TrendingAPI.Coin[]> {
+    const response = await fetch(`${COINGECKO_URL_BASE}/search`, { cache: 'force-cache' })
+    const result: CoinGeckoSearch = await response.json()
+    return [
+        ...result.coins.map(({ id, name, symbol }) => ({ id, name, symbol, type: TrendingCoinType.Fungible })),
+        ...result.nfts
+            .filter((x) => x.id)
+            .map(({ id, name, symbol }) => ({ id, name, symbol, type: TrendingCoinType.NonFungible })),
+    ]
 }
 // #endregion
 

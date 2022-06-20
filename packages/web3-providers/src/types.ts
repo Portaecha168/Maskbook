@@ -464,6 +464,11 @@ export namespace MaskBaseAPI {
     export interface Provider {}
 }
 
+export enum TrendingCoinType {
+    Fungible = 1,
+    NonFungible = 2,
+}
+
 export namespace TrendingAPI {
     export interface Settings {
         currency: Currency
@@ -494,6 +499,7 @@ export namespace TrendingAPI {
         id: string
         name: string
         symbol: string
+        type: TrendingCoinType
         decimals?: number
         is_mirrored?: boolean
         platform_url?: string

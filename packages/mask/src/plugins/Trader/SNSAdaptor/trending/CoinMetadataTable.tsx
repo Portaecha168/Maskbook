@@ -76,7 +76,7 @@ const brands: Record<CommunityType, React.ReactNode> = {
 }
 
 export function CoinMetadataTable(props: CoinMetadataTableProps) {
-    const { dataProvider, trending } = props
+    const { trending } = props
     const { t } = useI18N()
     const { classes } = useStyles()
 
