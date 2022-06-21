@@ -45,7 +45,7 @@ const useStyles = makeStyles()((theme) => ({
     actions: {
         position: 'absolute',
         bottom: 16,
-        width: 'calc( 100% - 32px)',
+        width: 'calc(100% - 32px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -66,7 +66,7 @@ const useStyles = makeStyles()((theme) => ({
         position: 'absolute',
         top: '50%',
         left: '50%',
-        transform: 'translate(-50%,-50%)',
+        transform: 'translate(-50%, -50%)',
     },
 }))
 
