@@ -274,7 +274,7 @@ export function TipDialog({ open = false, onClose }: TipDialogProps) {
                         href={account ? Others?.explorerResolver.addressLink(chainId, account) ?? '' : ''}
                         target="_blank"
                         rel="noopener noreferrer">
-                        <Icon type="linkOut" className={classes.linkIcon} />
+                        <Icon type="linkOut" size={12} className={classes.linkIcon} />
                     </Link>
                 </Typography>
             </div>

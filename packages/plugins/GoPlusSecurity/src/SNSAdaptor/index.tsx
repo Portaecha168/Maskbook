@@ -11,7 +11,7 @@ const sns: Plugin.SNSAdaptor.Definition = {
     init(signal) {},
     ApplicationEntries: [
         (() => {
-            const icon = <Icon type="securityChecker" />
+            const icon = <Icon type="securityChecker" size={36} />
             const name = { i18nKey: '__plugin_name', fallback: 'Check Security' }
             const iconFilterColor = 'rgba(69, 110, 255, 0.3)'
 
