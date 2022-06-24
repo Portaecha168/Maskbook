@@ -26,7 +26,7 @@ import { PluginHeader } from './PluginHeader'
 import { Box } from '@mui/system'
 import { ArrowDropIcon, BuyIcon } from '@masknet/icons'
 import { TrendingTokenSecurity } from './TrendingTokenSecurity'
-import type { TrendingAPI } from '@masknet/web3-providers'
+import type { TrendingAPI, TrendingCoinType } from '@masknet/web3-providers'
 import { EMPTY_LIST } from '@masknet/shared-base'
 
 const useStyles = makeStyles()((theme) => {
@@ -157,9 +157,9 @@ export function TrendingViewDeck(props: TrendingViewDeckProps) {
     // #region switch between coins with the same symbol
     const currentPreferredCoinIdSettings = useValueRef(getCurrentPreferredCoinIdSettings(dataProvider))
     const onCoinMenuChange = useCallback(
-        (value: string) => {
+        (type: TrendingCoinType, value: string) => {
             const settings = JSON.parse(currentPreferredCoinIdSettings) as Record<string, string>
-            const coin = coins.find((x) => x.id === value)
+            const coin = coins.find((x) => x.id === value && x.type === type)
             if (!coin) return
             settings[coin.symbol.toLowerCase()] = value
             getCurrentPreferredCoinIdSettings(dataProvider).value = stringify(settings)
